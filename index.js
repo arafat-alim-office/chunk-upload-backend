@@ -4,10 +4,12 @@ const fs = require("fs").promises;
 const cors = require("cors");
 require("dotenv").config();
 
+const { AppError } = require("./utils/error.utils");
+
 //! ensure uplaods directory exists
-const UPLOADS_DIR = path.join(__dirname, "..", "uploads");
-const TEMP_DIR = path.join(UPLOADS_DIR, "temp");
-const FILES_DIR = path.join(UPLOADS_DIR, "files");
+export const UPLOADS_DIR = path.join(__dirname, "..", "uploads");
+export const TEMP_DIR = path.join(UPLOADS_DIR, "temp");
+export const FILES_DIR = path.join(UPLOADS_DIR, "files");
 
 async function ensureDirectories() {
   try {
@@ -23,6 +25,7 @@ async function ensureDirectories() {
     console.log("Upload directories ensured");
   } catch (error) {
     console.error("Error ensuring directories: ", error);
+    throw new AppError("Failed to initialize upload directories", 500);
   }
 }
 

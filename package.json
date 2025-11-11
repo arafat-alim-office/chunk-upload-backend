@@ -1,17 +1,29 @@
 {
   "name": "chunk-upload-backend",
   "version": "1.0.0",
-  "description": "This project is basically use for chunk uplaod backend",
+  "description": "Backend for chunked file upload feature",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "chunk",
+    "upload",
+    "file",
+    "express"
+  ],
+  "author": "arafat@perpetuitycapital.co.in",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }

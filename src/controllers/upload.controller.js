@@ -95,7 +95,7 @@ export class UploadController {
 
       if (error) throw error;
 
-      const { error: dbError } = await supa.from("Chunk-Upload").insert({
+      const { error: dbError } = await supa.from("uploads").insert({
         id: sessionId,
         file_name: meta.fileName,
         mime_type: meta.mimeType,

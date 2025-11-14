@@ -4,9 +4,6 @@ import { existsSync, createWriteStream, readdirSync, mkdirSync } from "fs";
 import { LowSync } from "lowdb";
 import { JSONFileSync } from "lowdb/node";
 
-// ------------------------------------------------------------------
-//  Configuration
-// ------------------------------------------------------------------
 const TMP_DIR = process.env.UPLOAD_TMP_DIR || path.join(process.cwd(), "tmp");
 mkdirSync(TMP_DIR, { recursive: true });
 
@@ -18,9 +15,6 @@ db.read();
 db.data ??= { uploads: [] };
 db.write();
 
-// ------------------------------------------------------------------
-//  Service
-// ------------------------------------------------------------------
 export class ChunkService {
   static async saveMetadata(sessionId, meta) {
     db.data.uploads.push({ sessionId, ...meta, uploadedChunks: [] });

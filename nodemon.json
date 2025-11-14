@@ -1,0 +1,5 @@
+{
+  "ignore": ["tmp/**", "node_modules/**"],
+  "watch": ["src/**", "cron/**"],
+  "ext": "js,json"
+}

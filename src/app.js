@@ -4,8 +4,6 @@ import dotenv from "dotenv";
 import uploadRouter from "./routes/upload.route.js";
 import { errorHandler } from "./middlewares/error.handler.js";
 
-import "../cron/cleanup.js";
-
 dotenv.config();
 
 const app = express();
